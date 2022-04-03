@@ -32,7 +32,6 @@ small {
 .form-group input {
   border: none;
   border-radius: 0%;
-  /* border-bottom: 3px solid purple; */
 }
 
 input:focus {

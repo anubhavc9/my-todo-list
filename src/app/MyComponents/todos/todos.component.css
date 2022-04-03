@@ -2,3 +2,14 @@
   display: flex;
   justify-content: space-between;
 }
+
+.main-title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-size: 50px;
+
+  background: -webkit-linear-gradient(#f4524d, #5543ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
