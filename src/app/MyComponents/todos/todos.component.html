@@ -23,7 +23,14 @@
   <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
   <!-- whenever a "todoAdd" event is fired, run "addTodo()" -->
 
-  <h4>Your Todos</h4>
+  <div class="your-todos">
+    <h4>Your Todos</h4>
+    <button type="button" class="btn btn-secondary">
+      Remaining Tasks
+      <span class="badge bg-danger">{{ todoService.remainingTodos() }}</span>
+    </button>
+  </div>
+
   <hr />
   <div *ngIf="todoService.todos.length === 0; else elseBlock">
     No Todos to display
@@ -42,9 +49,4 @@
       </div>
     </div>
   </ng-template>
-
-  <button type="button" class="btn btn-secondary" style="margin: 20px 0px">
-    Remaining Tasks
-    <span class="badge bg-danger">{{ todoService.remainingTodos() }}</span>
-  </button>
 </div>
