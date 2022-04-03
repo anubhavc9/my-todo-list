@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 class="text-center mb-3">Todo List App</h1>
+  <div
+    *ngIf="addAlert"
+    class="alert alert-success alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>Success!</strong> Todo was added successfully.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div
+    *ngIf="deleteAlert"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>Deleted!</strong> Todo was removed successfully.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+  <!-- whenever a "todoAdd" event is fired, run "addTodo()" -->
+
+  <h4>Your Todos</h4>
+  <hr />
+  <div *ngIf="todoService.todos.length === 0; else elseBlock">
+    No Todos to display
+  </div>
+  <ng-template #elseBlock>
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let todo of todoService.todos; index as i" @fade>
+          <app-todo-item
+            [todo]="todo"
+            [i]="i"
+            (todoDelete)="deleteTodo($event)"
+            (todoCheckbox)="toggleTodo($event)"
+          ></app-todo-item>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <button type="button" class="btn btn-secondary" style="margin: 20px 0px">
+    Remaining Tasks
+    <span class="badge bg-danger">{{ todoService.remainingTodos() }}</span>
+  </button>
+</div>

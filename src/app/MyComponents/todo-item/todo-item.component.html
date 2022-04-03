@@ -1,0 +1,31 @@
+<div class="card-big-shadow">
+  <div
+    class="card card-just-text"
+    data-background="color"
+    data-color="green"
+    data-radius="none"
+  >
+    <div>
+      <i
+        id="todo {{ i }}"
+        (click)="onCheckboxClick(todo)"
+        class="material-icons completed-icon"
+        >done</i
+      >
+      <i class="material-icons delete-icon" (click)="onClick(todo)"
+        >delete_outline</i
+      >
+    </div>
+    <div class="content">
+      <h6 class="category">
+        {{ todo.sno }}
+      </h6>
+      <h4 [ngClass]="{ strike: !todo.active }" class="title">
+        {{ todo.title }}
+      </h4>
+      <p [ngClass]="{ strike: !todo.active }" class="description">
+        {{ todo.description }}
+      </p>
+    </div>
+  </div>
+</div>
