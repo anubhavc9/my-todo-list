@@ -4,11 +4,17 @@
   align-items: center;
 }
 
+.your-todos h4 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+
 .main-title {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 55px;
 
   background: -webkit-linear-gradient(#f4524d, #5543ca);
   -webkit-background-clip: text;

@@ -23,6 +23,11 @@ small {
   cursor: pointer;
 }
 
+.add-todo-heading {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .form-group {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
