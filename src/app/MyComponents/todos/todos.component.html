@@ -41,7 +41,7 @@
   </div>
   <ng-template #elseBlock>
     <div class="container">
-      <div class="row">
+      <div class="row todos-wrapper">
         <div *ngFor="let todo of todoService.todos; index as i" @fade>
           <app-todo-item
             [todo]="todo"

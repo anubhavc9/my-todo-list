@@ -27,3 +27,7 @@
   margin-left: 2px;
   font-size: 15px;
 }
+
+.todos-wrapper {
+  justify-content: space-evenly;
+}
