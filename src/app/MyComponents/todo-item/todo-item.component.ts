@@ -14,6 +14,8 @@ export class TodoItemComponent implements OnInit {
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
   @Output() todoCheckbox: EventEmitter<Todo> = new EventEmitter();
 
+  public cardColors = ['green', 'yellow', 'blue', 'purple', 'orange', 'brown'];
+
   constructor() {}
 
   ngOnInit(): void {}

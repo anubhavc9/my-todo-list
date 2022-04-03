@@ -1,5 +1,5 @@
 <div class="card-big-shadow">
-  <div class="card card-just-text" data-color="blue">
+  <div class="card card-just-text" [attr.data-color]="cardColors[todo.sno % 6]">
     <div>
       <i
         id="todo {{ i }}"
