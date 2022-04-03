@@ -12,10 +12,10 @@
         aria-describedby="emailHelp"
         required
       />
-      <small class="text-muted" *ngIf="!form.valid && form.touched">
-        Title cannot be empty!
-      </small>
     </div>
+    <small class="text-muted" *ngIf="!form.valid && form.touched">
+      Title cannot be empty!
+    </small>
     <div class="form-group">
       <label for="desc">Todo Description</label>
       <input
@@ -26,6 +26,12 @@
         [(ngModel)]="desc"
       />
     </div>
-    <button type="submit" class="btn btn-sm btn-primary" [disabled]="!form.valid">Add Todo</button>
+    <button
+      type="submit"
+      class="btn btn-primary add-todo"
+      [disabled]="!form.valid"
+    >
+      Add Todo
+    </button>
   </form>
 </div>

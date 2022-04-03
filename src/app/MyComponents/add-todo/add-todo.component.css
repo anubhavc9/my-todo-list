@@ -1,7 +1,51 @@
 input.ng-invalid.ng-touched {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 small {
-    color: red;
+  color: red;
+}
+
+.add-todo {
+  border-radius: 0%;
+  margin: 15px 0px;
+  background-color: blue; /* for browsers that support gradient */
+  background-image: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+  padding: 7px 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.add-todo:hover {
+  cursor: pointer;
+}
+
+.form-group {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 4px; /* how thick the input line will be */
+  border-radius: 0%;
+  background-image: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+}
+
+.form-group input {
+  border: none;
+  border-radius: 0%;
+  /* border-bottom: 3px solid purple; */
+}
+
+input:focus {
+  box-shadow: none;
+}
+
+.form-group label {
+  display: block;
+  background: white;
+  margin-bottom: 0px;
+}
+
+.text-muted {
+  background: white;
+  display: block;
 }
