@@ -1,6 +1,7 @@
 .your-todos {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .main-title {
@@ -12,4 +13,17 @@
   background: -webkit-linear-gradient(#f4524d, #5543ca);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.rem-tasks {
+  border-radius: 0%;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.rem-tasks-span {
+  margin-left: 2px;
+  font-size: 15px;
 }

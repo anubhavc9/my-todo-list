@@ -26,13 +26,16 @@
 
   <div class="your-todos">
     <h4>Your Todos</h4>
-    <button type="button" class="btn btn-secondary">
+    <button type="button" class="btn btn-secondary rem-tasks">
       Remaining Tasks
-      <span class="badge bg-danger">{{ todoService.remainingTodos() }}</span>
+      <span class="badge bg-danger rem-tasks-span">{{
+        todoService.remainingTodos()
+      }}</span>
     </button>
   </div>
 
-  <hr />
+  <hr style="background-color: black; border: 0 none; height: 3px" />
+
   <div *ngIf="todoService.todos.length === 0; else elseBlock">
     No Todos to display
   </div>
