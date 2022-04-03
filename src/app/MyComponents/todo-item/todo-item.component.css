@@ -84,13 +84,14 @@ a:focus {
 }
 
 .delete-icon {
-  color: #fb4d4d;
+  color: #ed2525;
   float: right;
   font-size: 30px;
   margin: 17px 17px 0px 0px;
 }
 .delete-icon:hover {
   cursor: pointer;
+  color: #f95a5a;
   animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
