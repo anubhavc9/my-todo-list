@@ -2,7 +2,7 @@
   <h4 class="add-todo-heading">Add a Todo</h4>
   <form (ngSubmit)="onSubmit()" #form="ngForm">
     <div class="form-group">
-      <label for="title">Todo Title</label>
+      <label for="title">Title</label>
       <input
         type="text"
         [(ngModel)]="title"
@@ -17,7 +17,7 @@
       Title cannot be empty!
     </small>
     <div class="form-group">
-      <label for="desc">Todo Description</label>
+      <label for="desc">Description</label>
       <input
         type="text"
         class="form-control"

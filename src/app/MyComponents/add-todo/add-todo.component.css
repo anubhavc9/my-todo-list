@@ -49,6 +49,8 @@ input:focus {
   display: block;
   background: white;
   margin-bottom: 0px;
+  font-size: 19px;
+  letter-spacing: 1px;
 }
 
 .text-muted {
