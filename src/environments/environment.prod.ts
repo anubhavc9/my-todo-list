@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://my-todo-list-backend.herokuapp.com',
 };

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Todo } from '../Todo';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,15 +13,14 @@ export class TodoService {
 
   constructor(private http: HttpClient) {}
 
-  public LOCAL_BASE_URL: string = 'http://localhost:5000';
-  public PROD_BASE_URL: string = 'https://my-todo-list-backend.herokuapp.com';
+  public BASE_URL: string = environment.baseUrl;
 
   getAllTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.PROD_BASE_URL + '/todos');
+    return this.http.get<Todo[]>(this.BASE_URL + '/todos');
   }
 
   addTodo(todo: Todo) {
-    return this.http.post<Todo>(this.PROD_BASE_URL + '/todos', {
+    return this.http.post<Todo>(this.BASE_URL + '/todos', {
       title: todo.title,
       description: todo.description,
       active: todo.active,
@@ -28,14 +28,14 @@ export class TodoService {
   }
 
   deleteTodo(todo: Todo) {
-    return this.http.delete(this.PROD_BASE_URL + '/todos/' + todo.sno);
+    return this.http.delete(this.BASE_URL + '/todos/' + todo.sno);
   }
 
   toggleTodo(todo: Todo) {
     const index = this.todos.indexOf(todo);
     this.todos[index].active = !this.todos[index].active;
 
-    return this.http.put(this.PROD_BASE_URL + '/todos/' + todo.sno, {
+    return this.http.put(this.BASE_URL + '/todos/' + todo.sno, {
       title: todo.title,
       description: todo.description,
       active: this.todos[index].active,
