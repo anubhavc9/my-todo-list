@@ -12,53 +12,34 @@ export class TodoService {
 
   constructor(private http: HttpClient) {}
 
+  public LOCAL_BASE_URL: string = 'http://localhost:5000';
+  public PROD_BASE_URL: string = 'https://my-todo-list-backend.herokuapp.com';
+
   getAllTodos(): Observable<Todo[]> {
-    // return this.http.get<Todo[]>('http://localhost:5000/todos');
-    return this.http.get<Todo[]>(
-      'https://my-todo-list-backend.herokuapp.com/todos'
-    );
+    return this.http.get<Todo[]>(this.PROD_BASE_URL + '/todos');
   }
 
   addTodo(todo: Todo) {
-    // return this.http.post<Todo>('http://localhost:5000/todos', {
-    //   "title": todo.title,
-    //   "description": todo.description,
-    //   "active": todo.active
-    // });
-    return this.http.post<Todo>(
-      'https://my-todo-list-backend.herokuapp.com/todos',
-      {
-        title: todo.title,
-        description: todo.description,
-        active: todo.active,
-      }
-    );
+    return this.http.post<Todo>(this.PROD_BASE_URL + '/todos', {
+      title: todo.title,
+      description: todo.description,
+      active: todo.active,
+    });
   }
 
   deleteTodo(todo: Todo) {
-    // return this.http.delete('http://localhost:5000/todos/'+todo.sno);
-    return this.http.delete(
-      'https://my-todo-list-backend.herokuapp.com/todos/' + todo.sno
-    );
+    return this.http.delete(this.PROD_BASE_URL + '/todos/' + todo.sno);
   }
 
   toggleTodo(todo: Todo) {
     const index = this.todos.indexOf(todo);
     this.todos[index].active = !this.todos[index].active;
 
-    // return this.http.put('http://localhost:5000/todos/' + todo.sno, {
-    //   title: todo.title,
-    //   description: todo.description,
-    //   active: this.todos[index].active,
-    // });
-    return this.http.put(
-      'https://my-todo-list-backend.herokuapp.com/todos/' + todo.sno,
-      {
-        title: todo.title,
-        description: todo.description,
-        active: this.todos[index].active,
-      }
-    );
+    return this.http.put(this.PROD_BASE_URL + '/todos/' + todo.sno, {
+      title: todo.title,
+      description: todo.description,
+      active: this.todos[index].active,
+    });
   }
 
   remainingTodos(): number {
